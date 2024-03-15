@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCCversion="1.0">
+<qresource>
+   <file>images/C:\Users\Migue\Desktop\matt\Desarrollo\Fight The Dragon\FighTheDragon\dragon</file>
+</qresource>
+</RCC>

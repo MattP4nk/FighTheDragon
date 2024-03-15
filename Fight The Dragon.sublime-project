@@ -1,0 +1,55 @@
+##Fight The Dragon
+from random import randint
+bear = Player("Bear", 20, 60, 30, 20, 30, 200, 0, 4)
+dragon = Dragon(1500, 30, 30, 60, 50)
+
+def Choice(choice = int(input("Chose 1, 2 or 3\n"))):
+    if choice==1:
+        print("You took the sword of Durandal")
+        caballier = Player("Caballier", 30, 60, 50, 20, 30, 100, 2, 1)
+        print("In front of the gates of the castle the dragons roars!")
+        print("Caballier history")
+        return caballier
+    elif choice==2:
+        print ("The migthy Dragonlance shine in your hands")
+        lancer = Player("Lancer", 50, 60, 30, 30, 20, 100, 2, 2)
+        print("Lancer history")
+        print("In front of the gates of the castle the dragons roars!")
+        return lancer
+    elif choice==3:
+        print("The sacred bow, the heavy Balista")
+        archer = Player("Archer", 60, 70, 20, 40, 10, 100, 2, 3)
+        print("Archer history")
+        print("In front of the gates of the castle the dragons roars!")
+        return archer
+    else:
+        print("That's not a sacred weapon, we will pick one for you!")
+        choice = randint (1,3)
+        return Choice(choice)
+
+
+def juego():
+    turn = 1
+    player = Choice()
+    while dragon.DragonLife>0 and player.life>0:
+        print("*" * 30)
+        Player.Status(player)
+        if Player.aCompanion ==1:
+            print("*" * 30)
+            Player.Status(bear)
+        print("*" * 30)
+        Player.Turn(player)
+        if Player.aCompanion ==1:
+            input("Press Enter to continue...")
+            print("*" * 30)
+            Player.Attack(bear)
+        input("Press Enter to continue...")
+        print("*" * 30)
+        Dragon.TimerEffects(dragon)
+        Dragon.Status(dragon)
+        input("Press Enter to continue...")
+        print("*" * 30)
+        Dragon.Turn(dragon)
+        turn +=1
+juego()
+

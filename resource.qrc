@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="Escritorio">
+    <file>dragon.png</file>
+  </qresource>
+</RCC>
